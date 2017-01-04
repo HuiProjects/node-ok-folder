@@ -1,6 +1,7 @@
 const express = require("express");
 var hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 8080 ;
 
 var app = express();
 
@@ -62,6 +63,6 @@ app.get("/about", (req,res) =>{
 
 
 
-app.listen(process.env.PORT, process.env.IP, () =>{
-    console.log("good to go");
+app.listen(port, () =>{
+    console.log(`${port} good to go`);
 });
