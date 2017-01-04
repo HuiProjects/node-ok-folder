@@ -1,7 +1,7 @@
 const express = require("express");
 var hbs = require('hbs');
 const fs = require('fs');
-const port = process.env.PORT || 8080 ;
+const port = process.env.PORT || process.env.IP;
 
 var app = express();
 
@@ -42,7 +42,7 @@ app.set('view engine', 'hbs');
 
 app.get("/", (req,res) =>{
     
-   res.render('home.hbs',{pageTitle:'about page', welcome:'Welcome to my homepage'});
+   res.render('home.hbs',{pageTitle:'home page', welcome:'Welcome to my homepage'});
     
 });
 
@@ -54,6 +54,12 @@ app.get("/about", (req,res) =>{
 });
 
 
+app.get("/projects", (req,res) =>{
+    
+ 
+    res.render('projects.hbs',{pageTitle:'projects page',});
+    
+});
 
 
 
